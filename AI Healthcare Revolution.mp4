@@ -18,3 +18,18 @@
 
 [▶ Click here to watch the demo](AI Healthcare Revolution.mp4)
 [▶ Watch Demo Video](VIDEO_LINK_HERE)
+
+import cv2
+
+video = cv2.VideoCapture("AI Healthcare Revolution.mp4")
+
+while video.isOpened():
+    ret, frame = video.read()
+    if not ret:
+        break
+    cv2.imshow("AI Healthcare Revolution", frame)
+    if cv2.waitKey(25) & 0xFF == ord('q'):
+        break
+
+video.release()
+cv2.destroyAllWindows()
